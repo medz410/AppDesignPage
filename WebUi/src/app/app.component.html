@@ -1,0 +1,83 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+            <i class="fas fa-window-frame"></i>
+          <breadcrumb-nav  
+          [data]="JsonData"
+          [data-reader]="'data'"
+          (onListItemClick)="getSelectedData($event)" 
+          (onClick)="getSelectedData($event)">
+           </breadcrumb-nav>
+        </div>
+       
+        <div class="card-body">
+            <div class="row" *ngIf="showCard">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-3">
+                         <span>2 Screens</span><br>
+                         <span>Updated On Oct 22,2020,3:14PM</span>
+                        </div>
+                        <div class="col-6">
+                         
+                          </div>
+                          <div class="col-3">
+                         
+                            </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                        <div class="flex-container">
+                            <div class="card">
+                                <div class="card-body" style="height: 300px;"  (click)='cardOneClick()'>
+                                    <img src="/assets/angualar.png" alt="Angular">
+                                </div>
+                                <div class="card-footer">
+                                   {{footerOne}}
+                                  </div>
+                                </div>
+                                    <div class="card">
+                                        <div class="card-body" style="height: 300px;" (click)='cardTwoClick()'>
+                                         
+                                            <img src="/assets/react.jpg" alt="React">                           
+                                        </div>
+                                        <div class="card-footer">
+                                            {{footerTwo}}
+                                           </div>
+                                        </div>
+                        </div>
+                        </div>
+                    </div>
+                   
+                  </div>
+            </div>
+          
+            
+                   <ng-container *ngIf= "cardOneshow && !showCard">
+                      <div class="col-8">
+                          <img src="/assets/angualar.jpg" alt="Angular">
+                        </div>
+                   </ng-container>
+                   <ng-container *ngIf= "cardTwoshow && !showCard">
+                      <div class="col-8">
+                      <img src="/assets/react.png" alt="React">
+                   </div>
+                  </ng-container>
+                
+              </div>
+          
+
+     
+        <div class="card-footer">
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
